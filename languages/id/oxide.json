@@ -1,0 +1,22 @@
+{
+    "mobile-menu-side": "Pilih di sisi mana setiap menu seluler aktif",
+    "theme-settings": "Pengaturan Tema",
+    "hide-sub-category": "Sembunyikan sub-kategori pada tampilan kategori",
+    "hide-last-entry": "Sembunyikan entri terakhir dalam tampilan kategori",
+    "enable-quick-reply": "Aktifkan balasan cepat",
+    "card-information": "Informasi tentang ",
+    "aboutme": "Tentang Saya",
+    "not-support-js": "Browser Anda sepertinya tidak mendukung JavaScript. Akibatnya, pengalaman Anda akan berkurang, dan Anda mungkin tidak dapat melakukan beberapa tindakan.",
+    "download-brower-js": "Harap unduh browser yang mendukung JavaScript, atau aktifkan jika itu dinonaktifkan (mis. NoScript).",
+    "last-post": "Postingan terakhir",
+    "show-topic-tid": "Tampilkan ID topik dalam judul",
+    "quick-reply-placeholder": "Isi pesan",
+    "enable-category-icon": "Tampilkan ikon kategori",
+    "bagde-title": "Lencana",
+    "enable-show-user-all-groups-in-profile": "Tampilkan semua grup pengguna dalam tampilan profil",
+    "rediect": "Tautan eksternal",
+    "show-more": "Tampilkan lebih banyak",
+    "topic-created": "Topik dibuat",
+    "account-ips": "Tampilkan IP pengguna di profil",
+    "toggle-theme-text": "Tema Gelap"
+}
