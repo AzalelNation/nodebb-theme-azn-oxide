@@ -1,0 +1,40 @@
+.notifications-list {
+	margin-top: 1em;
+	padding: 0;
+
+	li {
+		clear: both;
+		list-style-type: none;
+		padding: 10px;
+		margin-bottom: 10px;
+		border: 1px solid @gray-light;
+		.border-radius(@border-radius-base);
+		.zebra;
+		.pointer;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.unread {
+			box-shadow: 0 0 0 3px @gray-lighter;
+		}
+
+		.timestamp {
+			font-size: @font-size-small;
+		}
+
+		a {
+			display: block;
+			.text-ellipsis;
+		}
+
+		p {
+			margin: 0 0 0 35px;
+		}
+
+		.user-img {
+			.user-icon-style(24px, 1rem, 50%);
+		}
+	}
+}

@@ -1,0 +1,497 @@
+.account {
+	.profile-card {
+		position: relative;
+		background: #fff;
+		margin-bottom: 20px;
+		.border-radius(@border-radius-base);
+		border: 1px solid @gray-lighter;
+
+		.cover {
+			top: 0 !important;
+			height: 200px;
+			width: 100%;
+			.background-size(cover);
+			background-repeat: no-repeat;
+			background-origin: content-box;
+			.border-radius(@border-radius-base @border-radius-base 0 0);
+			position: relative;
+
+			.controls {
+				text-align: center;
+				height: 200px;
+				line-height: 200px;
+				.opacity(0);
+				.transition(opacity .15s linear);
+				cursor: pointer;
+				pointer-events: none;
+
+				> * {
+					pointer-events: all;
+				}
+
+				.fa {
+					color: #fff;
+					background-color: @gray-darker;
+					.opacity(1);
+					.user-icon-style(55px, @font-size-h1, 50%);
+					margin: 0 5px;
+				}
+			}
+
+			.save, .indicator {
+				display: inline-block;
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				opacity: 1;
+				background-color: @brand-primary;
+				color: @gray-lighter;
+				padding: 5px 10px;
+				font-weight: bold;
+				.border-radius(@border-radius-base);
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			.save, .indicator {
+				display: none;
+			}
+
+			&.active {
+				&:hover {
+					cursor: move;
+				}
+
+				.controls {
+					> * {
+						display: none;
+					}
+				}
+
+				.save {
+					display: inline-block;
+				}
+
+				.btn-morph {
+					display: none;
+				}
+			}
+
+			&.saving {
+				.save {
+					display: none;
+				}
+
+				.indicator {
+					display: inline-block;
+				}
+			}
+
+			&:hover {
+				.controls {
+					.opacity(.8);
+				}
+			}
+
+			.btn-morph {
+				top: 20px;
+				right: 20px;
+				position: absolute;
+			}
+		}
+
+		.card-info {
+			position: relative;
+			padding: 15px 15px 15px 155px;
+
+			.avatar-wrapper {
+				.avatar {
+					position: absolute;
+					left: 20px;
+					top: -70px;
+					height: 120px;
+					width: 120px;
+					font-size: 5rem;
+					line-height: 120px;
+				}
+
+				.chat, .follow {
+					position: absolute;
+					width: 30px;
+					height: 30px;
+				}
+
+				.chat {
+					left: -1px;
+					bottom: 1px;
+				}
+
+				.follow {
+					right: 1px;
+					bottom: 1px;
+				}
+			}
+
+			.profile-name {
+				position: absolute;
+				left: 155px;
+				top: -60px;
+
+				.fullname {
+					color: #fff;
+					text-shadow: 0 1px 3px rgba(0,0,0, .15);
+					font-size: 25px;
+
+					.status {
+						display: inline;
+						position: relative;
+						top: -2px;
+					}
+
+					i {
+						font-weight: 300;
+						font-size: 15px;
+						vertical-align: middle;
+					}
+				}
+			}
+
+			.account-stats {
+				display: block;
+				width: 100%;
+
+				.stat {
+					display: inline-block;
+					margin-right: 20px;
+					padding-right: 20px;
+					border-right: 1px solid rgba(0,0,0, .1);
+					text-align: center;
+
+					.human-readable-number {
+						font-weight: bold;
+					}
+
+					&:last-child {
+						border-right: 0;
+					}
+				}
+			}
+
+			.account-fab {
+				position: absolute;
+				right: 20px;
+				top: -20px;
+
+				button {
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					background-color: #fff;
+				}
+			}
+
+			@media (max-width: @screen-md-min) {
+				.avatar-wrapper {
+					.avatar {
+						left: 50%;
+						margin-left: -60px;
+					}
+				}
+
+				.profile-name {
+					position: relative;
+					left: unset;
+					top: unset;
+					margin-top: 50px;
+					text-align: center;
+
+					.fullname {
+						color: @gray-base;
+
+						i {
+							display: block;
+						}
+					}
+				}
+
+				.account-stats .stat {
+					margin-bottom: 10px;
+					padding-bottom: 10px;
+					display: block;
+					text-align: center;
+					border-bottom: 1px solid rgba(0,0,0, .1);
+					padding-right: 0;
+					margin-right: 0;
+					border-right: 0;
+
+					&:last-child {
+						border-bottom: 0;
+						margin-bottom: 0;
+						padding-bottom: 0;
+					}
+				}
+
+				& {
+					padding: 15px;
+				}
+			}
+		}
+
+		.card-title {
+			font-size: @font-size-base;
+			text-transform: uppercase;
+			font-weight: 400;
+			padding: 15px;
+			margin: 0;
+			background: @post-author-background;
+			border-bottom: 1px solid @gray-lighter;
+			.border-radius(@border-radius-base @border-radius-base 0 0);
+		}
+
+		.data-item {
+			display: table;
+			padding: 10px 0;
+			margin: 5px 15px;
+			width: ~"calc(100% - 30px)";
+			border-bottom: 1px solid @gray-lighter;
+
+			&:last-child {
+				border-bottom: 0 !important;
+			}
+
+			.data-header, strong {
+				display: table-cell;
+			}
+
+			.data-header {
+				min-width: 100px;
+				width: 100px;
+			}
+
+			strong,
+			[component="aboutme"] {
+				word-break: break-all;
+			}
+
+			&[component="aboutme"] p {
+				margin: 0;
+			}
+		}
+
+		.user-group {
+			a {
+				text-decoration: none !important;
+
+				.group-label:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.group-label {
+				display: block;
+				padding: 10px 0;
+				margin: 15px;
+				.border-radius(@border-radius-base);
+				font-size: @font-size-base;
+				font-weight: 300;
+			}
+		}
+	}
+
+	.section-title {
+		font-size: 26px;
+		margin: 0 0 20px;
+	}
+
+	.show-success,
+	.show-danger {
+		padding-right: 2.25rem;
+		background-repeat: no-repeat;
+		background-position: center right .625rem;
+		.background-size(1.25rem 1.25rem);
+
+		.form-feedback {
+			display: block;
+			margin-top: .25rem;
+		}
+	}
+
+	.show-success {
+		.form-control {
+			border-color: @material-success;
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%235cb85c' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E");
+		}
+
+		.form-feedback { color: @material-success; }
+	}
+
+	.show-danger {
+		.form-control {
+			border-color: @material-danger;
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23d9534f' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E");
+		}
+
+		.form-feedback { color: @material-danger; }
+	}
+
+	.account-topics [component="category/topic"] {
+		.avatar {
+			padding: 0;
+		}
+
+		.teaser .avatar::before {
+			content: unset;
+		}
+
+		.stats small {
+			.text-ellipsis;
+			display: block;
+			width: 50px;
+		}
+	}
+
+	.uploads {
+		.private,
+		.public {
+			margin-bottom: 0;
+		}
+
+		.list-group-item {
+			width: 100%;
+			table-layout: fixed;
+		}
+
+		.source-link {
+			.text-ellipsis;
+		}
+
+		.delete-button {
+			width: 30px;
+			text-align: right;
+		}
+	}
+
+	[component="account/moderation-note"] {
+		margin-bottom: 15px;
+	}
+
+	.Notes-table {
+		width: 100%;
+		table-layout: fixed;
+
+		.count-notes {
+			width: 40px;
+		}
+
+		.button-notes {
+			text-align: right;
+		}
+	}
+
+	.Note-item {
+		border-bottom: 1px solid @gray-lighter;
+		width: 100%;
+		table-layout: fixed;
+		padding: 5px;
+
+		.icon {
+			width: 24px;
+			margin-right: 15px
+		}
+
+		.meta {
+			padding-left: 10px;
+			width: 100%;
+
+			.content {
+				display: block;
+				white-space: initial;
+			}
+		}
+
+		&:last-child {
+			border: 0;
+		}
+	}
+}
+
+.account-picture-block {
+	vertical-align:top;
+	margin-bottom: 20px;
+
+	div {
+		margin-bottom: 10px;
+	}
+
+	.dropdown-toggle {
+		cursor: pointer;
+	}
+}
+
+.user-picture-label {
+	font-size: 20px;
+}
+
+.picture-switcher {
+	img, .user-icon {
+		.user-icon-style(46px, 2.4rem, 50%);
+	}
+
+	@media (max-width: @screen-sm) {
+		img, .user-icon {
+			display: none;
+		}
+	}
+
+	h4 {
+		line-height: 46px;
+		margin: 0;
+	}
+
+	.modal-body .btn {
+		padding: 10px 5px;
+		font-size: 13px;
+	}
+}
+
+.page-user-info {
+	.recent-flags {
+		padding-left: 0;
+
+		li {
+			list-style-type: none;
+		}
+
+		.title {
+			font-weight: bold;
+		}
+
+		.timestamp {
+			font-size: 1.25rem;
+			font-style: italic;
+			color: @gray-light;
+		}
+	}
+
+	.ban-history {
+		padding-left: 0;
+
+		li {
+			list-style-type: none;
+			border-bottom: 1px solid @gray-lighter;
+			margin-bottom: 1rem;
+		}
+
+		.timestamp {
+			font-weight: bold;
+		}
+
+		.expiry {
+			font-size: 1.25rem;
+			font-style: italic;
+			color: @gray-light;
+		}
+	}
+}
