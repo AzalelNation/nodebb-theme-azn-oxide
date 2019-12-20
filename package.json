@@ -1,0 +1,43 @@
+{
+	"name": "nodebb-theme-azn-oxide",
+	"description": "A theme that is based on the GitHub design. For AzN Forum.",
+	"version": "5.0.4",
+	"homepage": "https://github.com/AzalelNation/nodebb-theme-azn-oxide",
+	"license": "MIT",
+	"main": "theme.less",
+	"contributors": [
+		{
+			"name": "Sebastian Sycz",
+			"email": "sebastiansycz99@icloud.com",
+			"url": "https://github.com/youhosi"
+		},
+		{
+			"name": "Satya Bagus Dwiatmaja",
+			"email": "dwii5359@azalelnation.com",
+			"url": "https://github.com/ItzMeDwii"
+		}
+	],
+	"keywords": [
+		"nodebb",
+		"theme",
+		"forum",
+		"bootstrap",
+		"responsive",
+		"oxide",
+		"azn"
+	],
+	"nbbpm": {
+		"compatibility": "^1.12.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AzalelNation/nodebb-theme-azn-oxide.git"
+	},
+	"bugs": {
+		"url": "https://github.com/AzalelNation/nodebb-theme-azn-oxide/issues"
+	},
+	"dependencies": {
+		"pulling": "^2.0.0",
+		"striptags": "^3.1.1"
+	}
+}
