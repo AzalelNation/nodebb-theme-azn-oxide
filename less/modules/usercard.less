@@ -1,0 +1,75 @@
+.oxide-usercard {
+	position: absolute;
+	top: -10px;
+	background: #FFF;
+	border: 1px solid @gray-lighter;
+	.border-radius(@border-radius-base);
+	z-index: @zindex-navbar - 1;
+	width: 360px;
+	max-width: 360px;
+	box-shadow: 0 3px 12px rgba(0,0,0,.15);
+
+	.usercard-avatar {
+		padding: 15px;
+		width: 60px;
+
+		> a {
+			position: relative;
+			text-decoration: none;
+			.inline-block;
+		}
+
+		.usercard-picture {
+			.user-icon-style(60px, 24px, 50%);
+			text-align: center;
+			color: white;
+		}
+
+		.status {
+			position: absolute !important;
+			top: 2px !important;
+			right: 2px !important;
+		}
+	}
+
+	.usercard-body {
+		padding: 15px 0;
+		white-space: unset;
+
+		.usercard-name {
+			text-decoration: none;
+			word-break: break-all;
+
+			.usercard-fullname,
+			.usercard-username {
+				font-size: @font-size-base;
+			}
+
+			.usercard-fullname {
+				font-weight: bold;
+			}
+
+			.usercard-username {
+				color: @gray-light;
+				margin-left: 5px;
+			}
+
+			&:hover {
+				color: @brand-primary !important;
+			}
+		}
+
+		.usercard-stats {
+			margin-top: 5px;
+
+			.stats {
+				.inline-block;
+			}
+		}
+	}
+
+	.usercard-morph {
+		width: 30px;
+		padding: 15px;
+	}
+}

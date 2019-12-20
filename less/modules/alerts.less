@@ -1,0 +1,67 @@
+.alert-window {
+	position: fixed;
+	width: 300px;
+	z-index: 10002;
+	right: 20px;
+	bottom: 0px;
+
+	.alert {
+		background: #FFF;
+		position: relative;
+		overflow: hidden;
+		.border-radius(@border-radius-base);
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1px;
+			width: 0;
+			.transition(inherit);
+		}
+
+		&.alert-info {
+			color: @material-info;
+			border-color: darken(@material-info, 5%);
+			.box-shadow(0 0 0 3px lighten(@material-info, 25%));
+
+			&::before {
+				background-color: @material-info;
+			}
+		}
+
+		&.alert-warning {
+			color: @material-warning;
+			border-color: darken(@material-warning, 5%);
+			.box-shadow(0 0 0 3px lighten(@material-warning, 25%));
+
+			&::before {
+				background-color: @material-warning;
+			}
+		}
+
+		&.alert-success {
+			color: @material-success;
+			border-color: darken(@material-success, 5%);
+			.box-shadow(0 0 0 3px lighten(@material-success, 25%));
+
+			&::before {
+				background-color: @material-success;
+			}
+		}
+
+		&.alert-danger {
+			color: @material-danger;
+			border-color: darken(@material-danger, 5%);
+			.box-shadow(0 0 0 3px lighten(@material-danger, 25%));
+
+			&::before {
+				background-color: @material-danger;
+			}
+		}
+
+		&.animate::before {
+			width: 100%;
+		}
+	}
+}
